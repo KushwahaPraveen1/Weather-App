@@ -46,6 +46,7 @@ const handleChangeInput = (e) => {
 
   return (
     <>   
+<div className="App">
 <div className="main_div">
 <div className="right_main">
     <div className="wrapper">
@@ -59,10 +60,10 @@ const handleChangeInput = (e) => {
      
      <div className="right_card">
 
-      <div className="humidity"><div className="content2">Humidity</div>{data.main?<div className="content1"> {((data?.main?.humidity))} %</div>:null}</div>
-      <div className="feelslike"><div className="content2">Feels Like</div>  {data.main?<div className="content1"> {((data?.main?.feels_like) - 273.15).toFixed(2)}°C</div>:null}</div>
-      <div className="wind"><div className="content2">Wind Speed</div>   {data.wind?<div className="content1"> {((data?.wind?.speed))} Km/h</div>:null}</div>
-      <div className="pressure"><div className="content2">Pressure</div>   <div className="content1">{data.main?<div className="content1"> {((data?.main?.pressure))} Pa</div>:null}</div></div>
+      <div className="humidity common"><div className="content2">Humidity</div>{data.main?<div className="content1"> {((data?.main?.humidity))} %</div>:null}</div>
+      <div className="feelslike common"><div className="content2">Feels Like</div>  {data.main?<div className="content1"> {((data?.main?.feels_like) - 273.15).toFixed(2)}°C</div>:null}</div>
+      <div className="wind common"><div className="content2 wind1">Wind Speed</div>   {data.wind?<div className="content1"> {((data?.wind?.speed))} Km/h</div>:null}</div>
+      <div className="pressure common"><div className="content2">Pressure</div>   <div className="content1">{data.main?<div className="content1"> {((data?.main?.pressure))} Pa</div>:null}</div></div>
      </div>
 </div>
     <div className="left_card">
@@ -76,8 +77,9 @@ const handleChangeInput = (e) => {
     {data.weather?<div className="description"> {((data.weather[0].main))}</div>:null}
       
     </div>
-
+    </div>
 </div>
+
 
 
       </>
