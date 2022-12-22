@@ -10,10 +10,8 @@ function App() {
   const formatDate = Moment().format('DD MMM YYYY')
   const [inputCity, setInputCity] = useState("")
   const [data, setData] = useState({})
-
-
-  const getWetherDetails = (cityName) => 
-
+ 
+  const WeatherDetail = (cityName) => 
 {    
   if (!cityName)
   return
@@ -24,23 +22,22 @@ function App() {
     }).catch(() => {
       alert("Enter correct city name");
     })
-  
-}
+  }
 useEffect(() => {
-  getWetherDetails("Jhansi")
+  WeatherDetail("Jhansi")
 }, [])
 
 
 
-const handleChangeInput = (e) => {
+const InputData = (event) => {
    
-    console.log("value", e.target.value)
-    setInputCity(e.target.value)
+    console.log("value", event.target.value)
+    setInputCity(event.target.value)
   }
 
-  const handleSearch = () => {
+  const Searching = () => {
     
-    getWetherDetails(inputCity)
+    WeatherDetail(inputCity)
   }
 
 
@@ -51,38 +48,33 @@ const handleChangeInput = (e) => {
 <div className="right_main">
     <div className="wrapper">
   <div className="searchBar">
-    <input id="searchQueryInput" type="text" value={inputCity} onChange={handleChangeInput} name="searchQueryInput" placeHolder="Search" />
-    <button id="searchQuerySubmit" type="button" onClick={handleSearch} name="searchQuerySubmit">
+    <input id="searchQueryInput" type="text" value={inputCity} onChange={InputData} name="searchQueryInput" placeholder="Search" />
+    <button id="searchQuerySubmit" type="button" onClick={Searching} name="searchQuerySubmit">
    <span className="search_icon"><AiOutlineSearch/></span> 
     </button>
   </div>
-</div>
+</div> 
      
-     <div className="right_card">
-
+      <div className="right_card">
       <div className="humidity common"><div className="content2">Humidity</div>{data.main?<div className="content1"> {((data?.main?.humidity))} %</div>:null}</div>
       <div className="feelslike common"><div className="content2">Feels Like</div>  {data.main?<div className="content1"> {((data?.main?.feels_like) - 273.15).toFixed(2)}°C</div>:null}</div>
       <div className="wind common"><div className="content2 wind1">Wind Speed</div>   {data.wind?<div className="content1"> {((data?.wind?.speed))} Km/h</div>:null}</div>
       <div className="pressure common"><div className="content2">Pressure</div>   <div className="content1">{data.main?<div className="content1"> {((data?.main?.pressure))} Pa</div>:null}</div></div>
      </div>
-</div>
+      </div>
     <div className="left_card">
-      <div className="weekname">Wednesday</div>
-      
+    <div className="weekname">Wednesday</div> 
      <div className="date">{formatDate}</div> 
-     
      <div className="city">{data.name} {data.sys? <span> |  {data.sys.country}</span>:null }</div>
      <div className="image"> <BsCloudsFill/></div>
       {data.main?<div className="temprature">{((data?.main?.temp) - 273.15).toFixed(2)}°C</div>:null}
     {data.weather?<div className="description"> {((data.weather[0].main))}</div>:null}
-      
     </div>
     </div>
+    </div>
 
-</div>
 
-
-      </>
+</>
   );
 }
 
