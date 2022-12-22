@@ -12,14 +12,13 @@ font-family: 'Montserrat', sans-serif;
 
 }
 .App{
-  padding: 200px;
-  padding-top: 0;
+  padding: 20px
 }
 
 .left_card{
   color: white;
  width: 280px;
- background-color:#000000bb;
+ background-color:#000000a1;
  border-radius: 7%;
  box-shadow: 10px 10px 30px #000000;
  padding: 22px
@@ -71,9 +70,7 @@ margin-bottom: 10px;
   }
  
 
-  .right_main{
-width: auto;
-  }
+
   .content2{
     font-weight: bolder;
     font-size: 16px;
@@ -90,9 +87,9 @@ width: auto;
     height: 110px;
     align-items: center;
     justify-content: space-evenly;
-    background-color:#00000063;
+    background-color:#00000056;
     border-radius: 7%;
-    margin: 5px;
+   
     border-radius: 8%;
     margin: 7px;
     
@@ -160,6 +157,10 @@ width: auto;
   @media (max-width: 534px) {
     .wrapper{
       width: 70%;
+      
+    }
+    .main_div{
+      margin-top: 0;
     }
     .common{
      
@@ -168,6 +169,7 @@ width: auto;
       margin: 5px;
       border-radius: 8%;
       margin: 5px;
+
            
     }
     .common{
@@ -185,6 +187,20 @@ width: auto;
   .right_card{
     margin-left: 15px;
   }}
+  @media (max-width: 428px){
+    .right_card{
+      padding: 5px;
+      padding-left: 18px;
+    }
+    .App{
+      min-width: 300px;
+      padding: 30px;
+    }
+    .left_card{
+      margin-left: 27px;
+      margin-right: 0;
+    }
+  }
 
 
   
