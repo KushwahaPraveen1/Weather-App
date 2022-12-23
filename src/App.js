@@ -43,7 +43,7 @@ const InputData = (event) => {
 
   return (
     <>   
-<div className="App">
+
 <div className="main_div">
 <div className="right_main">
     <div className="wrapper">
@@ -71,7 +71,7 @@ const InputData = (event) => {
     {data.weather?<div className="description"> {((data.weather[0].main))}</div>:null}
     </div>
     </div>
-    </div>
+ 
 
 
 </>
