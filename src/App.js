@@ -6,6 +6,7 @@ import Moment from 'moment';
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsCloudsFill } from "react-icons/bs";
 
+
 function App() {
   const formatDate = Moment().format('DD MMM YYYY')
   const [inputCity, setInputCity] = useState("")
@@ -39,6 +40,12 @@ const InputData = (event) => {
     
     WeatherDetail(inputCity)
   }
+  const Searching2 = (event) => {
+   if(event.key==='Enter')
+   { 
+    WeatherDetail(inputCity)
+   }
+  }
 
 
   return (
@@ -48,7 +55,7 @@ const InputData = (event) => {
 <div className="right_main">
     <div className="wrapper">
   <div className="searchBar">
-    <input id="searchQueryInput" type="text" value={inputCity} onChange={InputData} name="searchQueryInput" placeholder="Search" />
+    <input id="searchQueryInput" type="text" value={inputCity} onKeyPress={Searching2} onChange={InputData} name="searchQueryInput" placeholder="Search" />
     <button id="searchQuerySubmit" type="button" onClick={Searching} name="searchQuerySubmit">
    <span className="search_icon"><AiOutlineSearch/></span> 
     </button>
